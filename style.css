@@ -1,0 +1,181 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* A modern and clean font */
+    background: linear-gradient(135deg, #56ccf2, #2f80ed); /* Blue gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Container for the entire app */
+.container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+}
+
+/* Weather Card */
+.weather-card {
+    background: rgba(255, 255, 255, 0.2); /* Slight transparent background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+    animation: fadeIn 1.5s ease-out; /* Animation for card */
+}
+
+/* Title of the app */
+.app-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for title */
+}
+
+/* Input and button styles */
+.location {
+    margin-bottom: 20px;
+}
+
+#city {
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.4);
+    color: #000; /* Black text for better contrast */
+    margin-right: 10px;
+    transition: 0.3s ease;
+}
+
+#city:focus {
+    border-color: #3498db; /* Focus border color */
+    background: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    animation: bounce 1s infinite alternate; /* Button bounce animation */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Weather info section */
+.weather-info {
+    display: none;
+    color: #fff;
+    text-align: left;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out; /* Animation for weather info */
+}
+
+.weather-info h2 {
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.weather-info h3 {
+    font-size: 2.5em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.weather-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.weather-info span {
+    font-weight: bold;
+}
+
+.weather-info .weather-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Error message */
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Styles for mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .weather-card {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .location input,
+    .location button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive Styles for small devices */
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 2em;
+    }
+
+    .weather-info h3 {
+        font-size: 2em;
+    }
+}
